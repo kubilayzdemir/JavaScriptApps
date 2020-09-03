@@ -6,7 +6,7 @@ let items ;
 
 
 loaditems();
-eventListeners(); // çalışması için fonksiyonu çağırmalısın
+eventListeners(); 
 
 function eventListeners() {
     form.addEventListener('submit', addNewItem);
@@ -69,7 +69,7 @@ function createitem(text){
 function addNewItem(e) {  // add new item
 
     if (input.value === '') {
-        alert('bi şey yaz')
+        alert('Write something please.')
     }
 
     //create item
@@ -78,7 +78,7 @@ function addNewItem(e) {  // add new item
     // save to LS
     setitemtols(input.value);
 
-    input.value = '' // inputa yazdığın yazıyı siler
+    input.value = '' // delete text which in the input
     e.preventDefault();
 
 }
@@ -87,7 +87,7 @@ function deleteItem(e) { // delete item
 
     
     if (e.target.className == 'fas fa-times') {
-        if (confirm('silcem emin misin')) 
+        if (confirm('Are you sure?')) 
         e.target.parentElement.parentElement.remove();
     }
 
@@ -97,9 +97,9 @@ function deleteItem(e) { // delete item
     e.preventDefault();
 }
 
-function deleteAll(e) { // hepsini sil
+function deleteAll(e) { // delete all
 
-    if (confirm('emin misin bak siliyom')) {
+    if (confirm('Are you sure delete all?')) {
         taskList.innerHTML = '';
     }
 
