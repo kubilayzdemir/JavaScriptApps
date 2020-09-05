@@ -25,15 +25,15 @@ function succes(input) {
     input.className = 'form-control is-valid'
 }
 
-function checkRequired(inputs) {
-    inputs.forEach(input => {
+function checkRequired(input) {
         if(input.value === ''){
             error(input,`${input.id} must be filled out.`)
+            return 1;
         }else{
             succes(input)
+            return 0;
         }
-    });
-};
+    };
 
 function checkLength(input,min,max){
     if(input.value.length < min){
@@ -66,12 +66,19 @@ function checkPasswords(input1,input2){
 
 form.addEventListener('submit', function(e){
     e.preventDefault();
-    checkRequired([username,email,password,repassword,phone]);
-    validateEmail(email);
-    checkLength(username,4,16);
-    checkPasswords(password,repassword);
-    checkLength(password,6,999);
-    checkPhone(phone)
-    
+    [username,password,repassword,email,phone].forEach(input => {
+        if(checkRequired(input)) {
+            checkRequired(input);
+        }else if(input == username) {
+            checkLength(username,4,16);
+        }else if(input == password || input == repassword){
+            checkPasswords(password,repassword);
+            checkLength(password,6,999); 
+        }else if(input == email){
+            validateEmail(email);
+        }else if(phone){
+            checkPhone(phone);
+        }
+    })   
 });
 
