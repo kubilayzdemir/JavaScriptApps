@@ -6,7 +6,7 @@ var models = [
     },
     {
         name  : 'Istanbul Technical University',
-        image : 'img/ıtu.png',
+        image : 'img/itu.png',
         link  : 'http://global.itu.edu.tr/'
     },
     {
@@ -20,7 +20,7 @@ var slideCount = models.length;
 let index = 0;
 
 var settings = {
-    duration : '3000', // 3 seconds
+    duration : '5000', // 5 seconds
     random   : false  // or true
 };
 
