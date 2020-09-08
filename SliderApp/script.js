@@ -1,7 +1,7 @@
 var models = [
     {
         name  : 'Yıldız Technical University',
-        image : 'https://pbs.twimg.com/profile_images/1015986833782657024/JF9zgpwu_400x400.jpg',
+        image : 'img/ytu.jpg',
         link  : 'https://www.yildiz.edu.tr/en'
     },
     {
