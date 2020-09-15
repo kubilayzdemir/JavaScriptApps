@@ -48,7 +48,7 @@ function checkLength(input,min,max){
 function checkPhone(input){
     let phoneno = /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/
     if (!phoneno.test(input.value)) {
-        error(input, 'Invalid phone number')
+        error(input, 'Invalid phone number (111 111 1111)')
     }else{
         succes(input);
     };
